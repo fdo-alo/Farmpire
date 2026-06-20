@@ -8,6 +8,9 @@ public class UpgradeableBuilding : MonoBehaviour
     protected BoxCollider2D boxCollider;
     protected PolygonCollider2D polygonCollider;
 
+    // Public variable to control debug logging from the Inspector
+    public bool activateDebug = false; 
+
     protected virtual void Awake() // Using Awake for component initialization
     {
         if (spriteRenderer == null)
@@ -20,11 +23,11 @@ public class UpgradeableBuilding : MonoBehaviour
         if (boxCollider == null)
         {
             boxCollider = gameObject.AddComponent<BoxCollider2D>();
-            Debug.LogWarning($"[UpgradeableBuilding] Added missing BoxCollider2D to {gameObject.name}.");
+            if (activateDebug) Debug.LogWarning($"[UpgradeableBuilding] Added missing BoxCollider2D to {gameObject.name}.");
         }
         else
         {
-            Debug.Log($"[UpgradeableBuilding] Found BoxCollider2D on {gameObject.name}. Enabled state: {boxCollider.enabled}");
+            if (activateDebug) Debug.Log($"[UpgradeableBuilding] Found BoxCollider2D on {gameObject.name}. Enabled state: {boxCollider.enabled}");
         }
 
         // Ensure PolygonCollider2D exists
@@ -32,11 +35,11 @@ public class UpgradeableBuilding : MonoBehaviour
         if (polygonCollider == null)
         {
             polygonCollider = gameObject.AddComponent<PolygonCollider2D>();
-            Debug.LogWarning($"[UpgradeableBuilding] Added missing PolygonCollider2D to {gameObject.name}.");
+            if (activateDebug) Debug.LogWarning($"[UpgradeableBuilding] Added missing PolygonCollider2D to {gameObject.name}.");
         }
         else
         {
-            Debug.Log($"[UpgradeableBuilding] Found PolygonCollider2D on {gameObject.name}. Enabled state: {polygonCollider.enabled}");
+            if (activateDebug) Debug.Log($"[UpgradeableBuilding] Found PolygonCollider2D on {gameObject.name}. Enabled state: {polygonCollider.enabled}");
         }
     }
 
@@ -48,7 +51,7 @@ public class UpgradeableBuilding : MonoBehaviour
     // This method will be called to change the sprite and manage colliders
     public virtual void Upgrade(int upgradeLevel)
     {
-        Debug.Log($"[UpgradeableBuilding] Upgrade called for {gameObject.name} with level: {upgradeLevel}");
+        if (activateDebug) Debug.Log($"[UpgradeableBuilding] Upgrade called for {gameObject.name} with level: {upgradeLevel}");
 
         if (upgradeSprites != null && upgradeLevel >= 0 && upgradeLevel < upgradeSprites.Length)
         {
@@ -58,7 +61,7 @@ public class UpgradeableBuilding : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("SpriteRenderer not found on " + gameObject.name);
+                if (activateDebug) Debug.LogWarning("SpriteRenderer not found on " + gameObject.name);
             }
 
             // Collider logic - colliders are guaranteed to exist by Awake()
@@ -66,13 +69,13 @@ public class UpgradeableBuilding : MonoBehaviour
             {
                 boxCollider.enabled = true;
                 polygonCollider.enabled = false;
-                Debug.Log($"[UpgradeableBuilding] {gameObject.name} - Level 0: BoxCollider enabled, PolygonCollider disabled.");
+                if (activateDebug) Debug.Log($"[UpgradeableBuilding] {gameObject.name} - Level 0: BoxCollider enabled, PolygonCollider disabled.");
             }
             else if (upgradeLevel > 0)
             {
                 boxCollider.enabled = false;
                 polygonCollider.enabled = true;
-                Debug.Log($"[UpgradeableBuilding] {gameObject.name} - Level > 0: BoxCollider disabled, PolygonCollider enabled.");
+                if (activateDebug) Debug.Log($"[UpgradeableBuilding] {gameObject.name} - Level > 0: BoxCollider disabled, PolygonCollider enabled.");
             }
             else
             {
@@ -80,12 +83,12 @@ public class UpgradeableBuilding : MonoBehaviour
                 // which should be prevented by the initial check.
                 boxCollider.enabled = false;
                 polygonCollider.enabled = false;
-                Debug.Log($"[UpgradeableBuilding] {gameObject.name} - Invalid Level: Both colliders disabled.");
+                if (activateDebug) Debug.Log($"[UpgradeableBuilding] {gameObject.name} - Invalid Level: Both colliders disabled.");
             }
         }
         else
         {
-            Debug.LogWarning($"[UpgradeableBuilding] Upgrade level out of bounds or upgradeSprites not set for {gameObject.name}: {upgradeLevel}");
+            if (activateDebug) Debug.LogWarning($"[UpgradeableBuilding] Upgrade level out of bounds or upgradeSprites not set for {gameObject.name}: {upgradeLevel}");
         }
     }
 }

@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5061052171026061329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -37, y: -37}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1611678869497222346
 CanvasRenderer:
@@ -168,6 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57abcec8e3163be49917b8280fb3fdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slot_UI
+  slotID: 0
+  inventory:
+    slots: []
   itemIcon: {fileID: 5404555968728304370}
   quantityText: {fileID: 2194564105975233787}
   highlight: {fileID: 5025236242001618218}
