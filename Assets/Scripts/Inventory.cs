@@ -94,6 +94,70 @@ public class Inventory
         Debug.LogWarning("Inventory is full! Could not add " + item.name);
     }
 
+    public bool CanAdd(ItemData itemData, int amount = 1)
+    {
+        if (itemData == null || amount <= 0)
+        {
+            return false;
+        }
+
+        int remainingAmount = amount;
+
+        foreach (var slot in slots)
+        {
+            if (slot.itemName == itemData.itemName)
+            {
+                remainingAmount -= slot.maxAllowed - slot.count;
+            }
+        }
+
+        foreach (var slot in slots)
+        {
+            if (slot.isEmpty)
+            {
+                remainingAmount -= slot.maxAllowed;
+            }
+        }
+
+        return remainingAmount <= 0;
+    }
+
+    public bool TryAdd(ItemData itemData, int amount = 1)
+    {
+        if (!CanAdd(itemData, amount))
+        {
+            return false;
+        }
+
+        for (int i = 0; i < amount; i++)
+        {
+            AddItemToFirstAvailableSlot(itemData);
+        }
+
+        return true;
+    }
+
+    private void AddItemToFirstAvailableSlot(ItemData itemData)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.itemName == itemData.itemName && slot.CanAddItem(itemData.itemName))
+            {
+                slot.AddItem(itemData.itemName, itemData.icon, slot.maxAllowed);
+                return;
+            }
+        }
+
+        foreach (var slot in slots)
+        {
+            if (slot.isEmpty)
+            {
+                slot.AddItem(itemData.itemName, itemData.icon, slot.maxAllowed);
+                return;
+            }
+        }
+    }
+
     public void Remove(int index)
     {
         slots[index].RemoveItem();

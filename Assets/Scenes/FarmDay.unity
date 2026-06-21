@@ -823,6 +823,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (4)
@@ -889,6 +901,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -2428,6 +2452,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (15)
@@ -2566,9 +2602,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   inventoryManager: {fileID: 0}
-  toolRange: 2.5
+  toolRange: 3.5
   cropManager: {fileID: 1867858716}
   testCropData: {fileID: 11400000, guid: 42b0e24fdcac7e541a1e375830f4c4fd, type: 2}
+  wateringToolName: Watering Can
 --- !u!114 &273749560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,6 +2682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TileSelector
   player: {fileID: 273749559}
   validSprite: {fileID: 21300000, guid: 60e60b03d68f82743bdae590cbf2616f, type: 3}
+  interactSprite: {fileID: 21300000, guid: 4aa52284673d4641aeee4f34d6889ed3, type: 3}
   invalidSprite: {fileID: 21300000, guid: e6d9356d465f094478aea20519fa4698, type: 3}
 --- !u!212 &296395508
 SpriteRenderer:
@@ -2767,6 +2805,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -3838,6 +3888,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (13)
@@ -4903,6 +4965,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (16)
@@ -5046,6 +5120,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -6069,6 +6155,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (5)
@@ -6206,6 +6304,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (1)
@@ -6301,6 +6411,7 @@ MonoBehaviour:
   interactableMap: {fileID: 1011746385}
   hiddenInteractableTile: {fileID: 11400000, guid: dd75d41d5075cef4485f339d0bec178d, type: 2}
   plowedTile: {fileID: 11400000, guid: 258f567a03592e44b864c8ae151129f9, type: 2}
+  wateredPlowedTile: {fileID: 11400000, guid: cba465cd1ae749aba875de602cb015ec, type: 2}
 --- !u!114 &960151653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6380,6 +6491,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -6639,6 +6762,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (17)
@@ -6863,7 +6998,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -21270,6 +21405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6844101743600793985, guid: f64433d3430c04e418e1708e1eaae01c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21833,6 +21972,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -22793,6 +22944,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (12)
@@ -22885,6 +23048,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -23926,6 +24101,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (9)
@@ -24845,6 +25032,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
       value: Sprinkler (3)
@@ -24901,6 +25100,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -31825,7 +32036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57abcec8e3163be49917b8280fb3fdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slot_UI
---- !u!1001 &2476474821673038179
+--- !u!1001 &3704751860001972977
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -31833,55 +32044,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 3610240315039588874, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
+      propertyPath: m_Name
+      value: Watering_Can_Collectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.13
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.67
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6007550528194717249, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+    - target: {fileID: 4021379258039047683, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6055634141946774576, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
-      propertyPath: m_Name
-      value: Crop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e9d261661fdc021428776808fa4bd9f7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 27f350b7fb0b66d4a9b1a29692751dd9, type: 3}
 --- !u!1001 &4851861543894641406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31892,11 +32103,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3592138590540905435, guid: 85cdd17c38d8a334fae63290f76c5e84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.92
+      value: 6.49
       objectReference: {fileID: 0}
     - target: {fileID: 3592138590540905435, guid: 85cdd17c38d8a334fae63290f76c5e84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: 5.53
       objectReference: {fileID: 0}
     - target: {fileID: 3592138590540905435, guid: 85cdd17c38d8a334fae63290f76c5e84, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31986,6 +32197,18 @@ PrefabInstance:
     - target: {fileID: 2427437658280622327, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672715118470138671, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715069352124649087, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8094186360815011208, guid: ac658b8aa80ad394aa8aafdaafdfadc5, type: 3}
       propertyPath: m_Name
@@ -32123,6 +32346,6 @@ SceneRoots:
   - {fileID: 1981649584}
   - {fileID: 960151651}
   - {fileID: 4851861543894641406}
-  - {fileID: 2476474821673038179}
   - {fileID: 1867858717}
   - {fileID: 296395509}
+  - {fileID: 3704751860001972977}

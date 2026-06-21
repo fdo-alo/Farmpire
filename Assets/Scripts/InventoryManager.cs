@@ -32,6 +32,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public bool TryAdd(string inventoryName, ItemData itemData, int amount = 1)
+    {
+        return inventoryByName.ContainsKey(inventoryName)
+            && inventoryByName[inventoryName].TryAdd(itemData, amount);
+    }
+
     public Inventory GetInventoryByName(string inventoryName)
     {
         return inventoryByName.GetValueOrDefault(inventoryName);

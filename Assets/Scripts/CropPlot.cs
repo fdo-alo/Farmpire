@@ -26,7 +26,7 @@ public class CropPlot : MonoBehaviour
 
     private void Update()
     {
-        if (State != CropState.Growing || CropData == null)
+        if (State != CropState.Growing || CropData == null || !IsWatered)
         {
             return;
         }
@@ -40,12 +40,12 @@ public class CropPlot : MonoBehaviour
         }
     }
 
-    public void Plant(Vector3Int cellPosition, CropData cropData)
+    public void Plant(Vector3Int cellPosition, CropData cropData, bool isWatered = false)
     {
         CellPosition = cellPosition;
         CropData = cropData;
         State = CropState.Growing;
-        IsWatered = false;
+        IsWatered = isWatered;
         currentStageIndex = 0;
         growthTimer = 0f;
 

@@ -15,6 +15,8 @@ public class UI_Manager : MonoBehaviour
    public static Image draggedIcon;
    public static bool dragSingle;
 
+   public bool IsInventoryOpen => inventoryPanel != null && inventoryPanel.activeSelf;
+
    private void Awake()
    {
       Initialize();

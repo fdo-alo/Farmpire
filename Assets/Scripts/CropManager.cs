@@ -12,7 +12,12 @@ public class CropManager : MonoBehaviour
         return cropsByCell.ContainsKey(cellPosition);
     }
 
-    public bool TryPlant(Vector3Int cellPosition, Vector3 worldPosition, CropData cropData)
+    public bool HasReadyCrop(Vector3Int cellPosition)
+    {
+        return cropsByCell.TryGetValue(cellPosition, out CropPlot cropPlot) && cropPlot.CanHarvest();
+    }
+
+    public bool TryPlant(Vector3Int cellPosition, Vector3 worldPosition, CropData cropData, bool isWatered = false)
     {
         if (cropPlotPrefab == null || cropData == null || HasCrop(cellPosition))
         {
@@ -20,7 +25,7 @@ public class CropManager : MonoBehaviour
         }
 
         CropPlot cropPlot = Instantiate(cropPlotPrefab, worldPosition, Quaternion.identity, transform);
-        cropPlot.Plant(cellPosition, cropData);
+        cropPlot.Plant(cellPosition, cropData, isWatered);
         cropsByCell.Add(cellPosition, cropPlot);
         return true;
     }
@@ -34,6 +39,21 @@ public class CropManager : MonoBehaviour
 
         cropPlot.Water();
         return true;
+    }
+
+    public bool TryGetHarvest(Vector3Int cellPosition, out ItemData harvestItem, out int harvestAmount)
+    {
+        harvestItem = null;
+        harvestAmount = 0;
+
+        if (!cropsByCell.TryGetValue(cellPosition, out CropPlot cropPlot) || !cropPlot.CanHarvest())
+        {
+            return false;
+        }
+
+        harvestItem = cropPlot.CropData.harvestItem;
+        harvestAmount = Mathf.Max(1, cropPlot.CropData.harvestAmount);
+        return harvestItem != null;
     }
 
     public ItemData TryHarvest(Vector3Int cellPosition)

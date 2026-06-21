@@ -22,6 +22,14 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        if (IsGameplayInputBlocked())
+        {
+            CurrentDirection = Vector3.zero;
+            currentSpeed = speed;
+            UpdateAnimator(CurrentDirection);
+            return;
+        }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -47,7 +55,19 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (IsGameplayInputBlocked())
+        {
+            return;
+        }
+
         transform.Translate(CurrentDirection * (currentSpeed * Time.deltaTime));
+    }
+
+    private bool IsGameplayInputBlocked()
+    {
+        return GameManager.instance != null
+            && GameManager.instance.uiManager != null
+            && GameManager.instance.uiManager.IsInventoryOpen;
     }
 
     private Vector2Int GetCardinalFacing(Vector2 inputDirection)

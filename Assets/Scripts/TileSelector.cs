@@ -5,6 +5,7 @@ public class TileSelector : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private Sprite validSprite;
+    [SerializeField] private Sprite interactSprite;
     [SerializeField] private Sprite invalidSprite;
 
     private SpriteRenderer spriteRenderer;
@@ -21,7 +22,7 @@ public class TileSelector : MonoBehaviour
 
     private void Update()
     {
-        if (player == null || !player.TryGetTargetCell(out Vector3Int targetCell, out Vector3 targetCellCenter))
+        if (IsInventoryOpen() || player == null || !player.TryGetTargetCell(out Vector3Int targetCell, out Vector3 targetCellCenter))
         {
             SetVisible(false);
             return;
@@ -30,7 +31,21 @@ public class TileSelector : MonoBehaviour
         transform.position = targetCellCenter;
 
         bool isValidTarget = player.CanUseSelectedToolAt(targetCell, targetCellCenter);
-        spriteRenderer.sprite = isValidTarget ? validSprite : invalidSprite;
+        bool isInteractTarget = player.CanInteractAt(targetCell, targetCellCenter);
+
+        if (isValidTarget)
+        {
+            spriteRenderer.sprite = validSprite;
+        }
+        else if (isInteractTarget)
+        {
+            spriteRenderer.sprite = interactSprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = invalidSprite;
+        }
+
         SetVisible(spriteRenderer.sprite != null);
     }
 
@@ -40,5 +55,12 @@ public class TileSelector : MonoBehaviour
         {
             spriteRenderer.enabled = isVisible;
         }
+    }
+
+    private bool IsInventoryOpen()
+    {
+        return GameManager.instance != null
+            && GameManager.instance.uiManager != null
+            && GameManager.instance.uiManager.IsInventoryOpen;
     }
 }

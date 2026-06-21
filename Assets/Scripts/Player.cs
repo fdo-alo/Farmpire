@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
    [SerializeField] private float toolRange = 2.5f;
    [SerializeField] private CropManager cropManager;
    [SerializeField] private CropData testCropData;
+   [SerializeField] private string wateringToolName = "Watering Can";
 
    private TileManager tileManager;
    private Vector2Int facingDirection = Vector2Int.down;
@@ -28,17 +29,39 @@ public class Player : MonoBehaviour
 
    private void Update()
    {
+      if (IsGameplayInputBlocked())
+      {
+         return;
+      }
+
       UpdateFacingDirection();
 
       if (Input.GetMouseButtonDown(0))
       {
          UseSelectedToolAtMouse();
       }
+
+      if (Input.GetKeyDown(KeyCode.E))
+      {
+         InteractAtMouse();
+      }
+   }
+
+   private bool IsGameplayInputBlocked()
+   {
+      return GameManager.instance != null
+         && GameManager.instance.uiManager != null
+         && GameManager.instance.uiManager.IsInventoryOpen;
    }
 
    private void UseSelectedToolAtMouse()
    {
       if (!TryGetTargetCell(out Vector3Int targetCell, out Vector3 targetCellCenter))
+      {
+         return;
+      }
+
+      if (!CanUseSelectedToolAt(targetCell, targetCellCenter))
       {
          return;
       }
@@ -54,6 +77,12 @@ public class Player : MonoBehaviour
       if (HasSelectedSeed(testCropData))
       {
          PlantCrop(targetCell, targetCellCenter, testCropData);
+         return;
+      }
+
+      if (HasSelectedTool(wateringToolName))
+      {
+         WaterCrop(targetCell);
       }
    }
 
@@ -103,7 +132,21 @@ public class Player : MonoBehaviour
             && !cropManager.HasCrop(targetCell);
       }
 
+      if (HasSelectedTool(wateringToolName))
+      {
+         return tileManager != null
+            && tileManager.IsPlowed(targetCell)
+            && !tileManager.IsWatered(targetCell);
+      }
+
       return false;
+   }
+
+   public bool CanInteractAt(Vector3Int targetCell, Vector3 targetCellCenter)
+   {
+      return IsTargetCellInToolRange(targetCellCenter)
+         && cropManager != null
+         && cropManager.HasReadyCrop(targetCell);
    }
 
    private void UseHoe(Vector3Int targetCell)
@@ -123,7 +166,69 @@ public class Player : MonoBehaviour
          return;
       }
 
-      cropManager.TryPlant(targetCell, targetCellCenter, cropData);
+      cropManager.TryPlant(targetCell, targetCellCenter, cropData, tileManager.IsWatered(targetCell));
+   }
+
+   private void WaterCrop(Vector3Int targetCell)
+   {
+      if (!tileManager.IsPlowed(targetCell) || tileManager.IsWatered(targetCell))
+      {
+         return;
+      }
+
+      tileManager.SetWatered(targetCell);
+
+      if (cropManager != null)
+      {
+         cropManager.TryWater(targetCell);
+      }
+   }
+
+   private void InteractAtMouse()
+   {
+      if (!TryGetTargetCell(out Vector3Int targetCell, out Vector3 targetCellCenter))
+      {
+         return;
+      }
+
+      if (!IsTargetCellInToolRange(targetCellCenter))
+      {
+         return;
+      }
+
+      if (HarvestCrop(targetCell))
+      {
+         FaceTarget(targetCellCenter);
+      }
+   }
+
+   private bool HarvestCrop(Vector3Int targetCell)
+   {
+      if (cropManager == null || inventoryManager == null)
+      {
+         return false;
+      }
+
+      if (!cropManager.TryGetHarvest(targetCell, out ItemData harvestItem, out int harvestAmount))
+      {
+         return false;
+      }
+
+      if (!inventoryManager.TryAdd("Backpack", harvestItem, harvestAmount))
+      {
+         Debug.LogWarning("Backpack is full! Could not harvest " + harvestItem.itemName);
+         return false;
+      }
+
+      cropManager.TryHarvest(targetCell);
+      tileManager.SetPlowed(targetCell);
+
+      if (GameManager.instance != null)
+      {
+         GameManager.instance.uiManager?.RefreshInventoryUI("Backpack");
+      }
+
+      return true;
    }
 
    public bool HasSelectedTool(string itemName)

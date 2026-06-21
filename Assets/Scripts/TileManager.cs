@@ -6,6 +6,7 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tilemap interactableMap;
     [SerializeField] private Tile hiddenInteractableTile;
     [SerializeField] private Tile plowedTile;
+    [SerializeField] private Tile wateredPlowedTile;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +29,13 @@ public class TileManager : MonoBehaviour
     public bool IsPlowed(Vector3Int position)
     {
         TileBase tile = interactableMap.GetTile(position);
-        return tile != null && tile == plowedTile;
+        return tile != null && (tile == plowedTile || tile == wateredPlowedTile);
+    }
+
+    public bool IsWatered(Vector3Int position)
+    {
+        TileBase tile = interactableMap.GetTile(position);
+        return tile != null && tile == wateredPlowedTile;
     }
 
     public Vector3Int WorldToCell(Vector3 worldPosition)
@@ -43,7 +50,22 @@ public class TileManager : MonoBehaviour
 
     public void SetInteracted(Vector3Int position)
     {
+        SetPlowed(position);
+    }
+
+    public void SetPlowed(Vector3Int position)
+    {
         interactableMap.SetTile(position, plowedTile);
+    }
+
+    public void SetWatered(Vector3Int position)
+    {
+        if (wateredPlowedTile == null || !IsPlowed(position))
+        {
+            return;
+        }
+
+        interactableMap.SetTile(position, wateredPlowedTile);
     }
 
     public string GetTileName(Vector3Int position)
