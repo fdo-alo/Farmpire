@@ -1,58 +1,19 @@
 fileFormatVersion: 2
-guid: a378def6528188749a567ac029d96d2a
+guid: e6d9356d465f094478aea20519fa4698
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8834441656716106029
-    second: hoe_0
+      213: 1013149173102650409
+    second: tile-invalid_0
   - first:
-      213: -8784486948369604141
-    second: hoe_1
+      213: 879200004578001519
+    second: tile-invalid_1
   - first:
-      213: 7882796117090268488
-    second: hoe_2
+      213: -6566655754999213501
+    second: tile-invalid_2
   - first:
-      213: 8701062641939940010
-    second: hoe_3
-  - first:
-      213: -7848671157526044125
-    second: hoe_4
-  - first:
-      213: 2093661711069568584
-    second: hoe_5
-  - first:
-      213: -4779610319632999516
-    second: hoe_6
-  - first:
-      213: 8145018172073923741
-    second: hoe_7
-  - first:
-      213: -8178373098711950491
-    second: hoe_8
-  - first:
-      213: 8108911115174985979
-    second: hoe_9
-  - first:
-      213: -2035320682535819772
-    second: hoe_10
-  - first:
-      213: 2874828515851237908
-    second: hoe_11
-  - first:
-      213: -997945452798631629
-    second: hoe_12
-  - first:
-      213: 2409220705626996063
-    second: hoe_13
-  - first:
-      213: -1232529944941689775
-    second: hoe_14
-  - first:
-      213: -5221178957237839233
-    second: hoe_15
-  - first:
-      213: -1042235263881762092
-    second: hoe_16
+      213: -7575879079158585184
+    second: tile-invalid_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -94,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -148,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hoe_0
+      name: tile-invalid_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 38
-        width: 13
-        height: 11
+        x: 0
+        y: 9
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d291a7141ed3a9a70800000000000000
-      internalID: 8834441656716106029
+      spriteID: 924a3471ecd6f0e00800000000000000
+      internalID: 1013149173102650409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile-invalid_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62c467febb833c00800000000000000
+      internalID: 879200004578001519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile-invalid_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3425ff8e16d8ed4a0800000000000000
+      internalID: -6566655754999213501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile-invalid_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a86071cd121dd690800000000000000
+      internalID: -7575879079158585184
       vertices: []
       indices: 
       edges: []
@@ -173,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 810d326c4cd519347930e0e23b76caf5
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -183,24 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hoe_0: 8834441656716106029
-      hoe_1: -8784486948369604141
-      hoe_10: -2035320682535819772
-      hoe_11: 2874828515851237908
-      hoe_12: -997945452798631629
-      hoe_13: 2409220705626996063
-      hoe_14: -1232529944941689775
-      hoe_15: -5221178957237839233
-      hoe_16: -1042235263881762092
-      hoe_17: -1978504139
-      hoe_2: 7882796117090268488
-      hoe_3: 8701062641939940010
-      hoe_4: -7848671157526044125
-      hoe_5: 2093661711069568584
-      hoe_6: -4779610319632999516
-      hoe_7: 8145018172073923741
-      hoe_8: -8178373098711950491
-      hoe_9: 8108911115174985979
+      tile-invalid_0: 1013149173102650409
+      tile-invalid_1: 879200004578001519
+      tile-invalid_2: -6566655754999213501
+      tile-invalid_3: -7575879079158585184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
